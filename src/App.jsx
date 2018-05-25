@@ -8,9 +8,21 @@ const PHOTO_URL = "https://picsum.photos/200?photo=";
 const PHOTO_LIST_URL = "https://picsum.photos/list";
 
 class App extends Component {
-  // 1. Declare a state object that will be used to track an array of photos
-  state = {
+  // *done* 1. Declare a state object that will be used to track an array of photos 
+  state = {photos: []};
+
+  componentDidMount() {
+
+   fetch (PHOTO_LIST_URL)
+   .then((response) => {
+    return response.json();
+   }) 
+   .then((data) => {
+     console.log(data);
+     this.setState({photos:data})
+   })
   }
+
 
   // 2. Declare a life cycle method
   // This life cycle method should:
@@ -34,9 +46,9 @@ class App extends Component {
               * and for loops are not. You'll learn more about this soon! 
               */}
             {photos.map( photo => 
-                <img alt={/* 3. Fill me in with the photo's filename */ ""}
-                     key={/* 4. Fill me in with the photo's id */ ""}
-                     src={/* 5. Fill me in with the photo's URL */ ""}
+                <img alt={photo.filename }
+                     key={photo.id}
+                     src={PHOTO_URL + photo.id}
                 />
             )}
         </div>
