@@ -13,7 +13,7 @@ class App extends Component {
 
   componentDidMount() {
 
-   fetch (PHOTO_LIST_URL)
+   fetch(PHOTO_LIST_URL)
    .then((response) => {
     return response.json();
    }) 
