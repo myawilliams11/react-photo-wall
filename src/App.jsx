@@ -36,9 +36,7 @@ class App extends Component {
         <header>
           <h1>Photo Wall</h1>
           <p>
-            Start by reading App.jsx and completing the numbered steps.
-            Afterward, delete this paragraph. Then, open up App.css and
-            complete the instructions there.
+            Here's my completed photo wall
           </p>
         </header>
         <div className="collage">
